@@ -15,15 +15,15 @@
 
 export default function validarDato(typeDal,dato={},isPrimaryData=true,obj={}){
     const types= ['fuction','string','object','boolean','number','objeto_user'];
-    const resps=[()=>{},"",{},undefined,NaN,{}];
+    //const resps=[()=>{},"",{},undefined,NaN,{}];
     
-    let resp_dato;
+    //let resp_dato;
 
     let typeDal_is_Good=((!Number.isInteger(typeDal)) || (Number.isNaN(typeDal)))?false:true;
     
     let typeDal_is_rate=(typeDal<0 || typeDal>=types.length )?false:true;
     
-    let resp=false;
+    let resp;
     
 
     if(typeDal_is_Good==true && typeDal_is_rate==true) resp=(typeDal==typeDal.length-1)
@@ -32,11 +32,11 @@ export default function validarDato(typeDal,dato={},isPrimaryData=true,obj={}){
 
      //resp_dato = resp ? dato  : resps[typeDal];
      
-    if(!resp && (typeDal_is_Good && typeDal_is_rate)) console.error(`funcion validar datos: tipo de dato incorrecto, dato esperado ${(isPrimaryData)?types[typeDal]:obj} dato enviado ${(isPrimaryData)?typeof dato:dato.constructor.name}`);
+    //if(!resp && (typeDal_is_Good && typeDal_is_rate)) console.error(`funcion validar datos: tipo de dato incorrecto, dato esperado ${(isPrimaryData)?types[typeDal]:obj} dato enviado ${(isPrimaryData)?typeof dato:dato.constructor.name}`);
 
     if(!typeDal_is_Good) console.error(`funcion validar datos: type no es un numero`);
     if(!typeDal_is_rate) console.error(`funcion validar datos: type esta fuera del rango`);
 
     //return resp_dato;
-    return resp;
+    return resp; //retororna indefined si no cumple con el rango del array
 }
