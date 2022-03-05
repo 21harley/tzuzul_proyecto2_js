@@ -1,0 +1,20 @@
+/*
+
+:root{
+    --color-primero:#019267;
+    --color-segundo:#00c897;
+    --color-tercero:#cd1818;
+    --color-cuarto:#f3950D;
+    --color-quinto:#f4e185;
+}
+
+*/
+.view{
+    background-color: var(--color-segundo);
+    height: 80vh;
+    width: 500px;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    padding: 5px;
+}

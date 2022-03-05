@@ -1,3 +1,3 @@
-import Ruta from "./function/Rutas.js";
+import Ruta from "./class/Rutas.js";
 
-Ruta("Home");
+Ruta.cambioRuta("Home");

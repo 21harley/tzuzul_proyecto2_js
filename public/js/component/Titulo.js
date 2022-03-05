@@ -2,10 +2,9 @@ import Componente from "../class/Componente.js";
 
 class Titulo extends Componente{
    
-    constructor(text_des="",id="",name="",clase=""){
-        super(text_des,id,name,clase); 
+    constructor(text_des="",id="",name="",clase="",otrosAtributos=""){
+        super(text_des,id,name,clase,otrosAtributos); 
     }
-
     crearTitulo(){
         return(
             `

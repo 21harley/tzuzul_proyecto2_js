@@ -1,4 +1,4 @@
-import Ruta from "../function/Rutas.js";
+import Rutas from "../class/Rutas.js";
 import Boton from "../Component/Boton.js";
 
 class Creditos{
@@ -7,13 +7,13 @@ class Creditos{
     
     constructor(){
         //cargar Datos localStore
-        this.#botonHome=new Boton("Home",'home_boton','home_boton',"home_boton");
+        this.#botonHome=new Boton("Home",'home_boton','home_boton',"boot","");
     }
 
     view_creditos(){
         return(
             `
-            <div class="view_Creditos">
+            <div class="view view_Creditos">
                 ${this.#botonHome.crearBoton()}            
             </div>
             `
@@ -27,7 +27,7 @@ class Creditos{
             console.log(e);
             if(e.target.matches(this.#botonHome.G_Id)){
                 //guardo Datos
-                Ruta("Home");
+                Rutas.cambioRuta("Home");
             }
         })  
     }

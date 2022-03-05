@@ -13,4 +13,14 @@
 .boot{
     background-color: var(--color-quinto);
     color: var(--color-primero);
+    height: 50px;
+    width: 80%;
+    border: none;
+    transition: all 0.5s;
+}
+
+.boot:hover{
+    background-color: var(--color-primero);
+    color: var(--color-quinto);
+    cursor: pointer;
 }

@@ -1,22 +1,36 @@
-import Ruta from "../function/Rutas.js";
+import Rutas from "../class/Rutas.js";
 import Boton from "../Component/Boton.js";
+import Titulo from "../component/Titulo.js";
 
 class Home{
     //atributos
+    #titulo;
+    #juego;
+    #comoJugar;
+    #panelControl;
+    #ranking;
     #credito;
-    #credito1;
+
 
     constructor(){
-        //recuperar datos 
-        this.#credito=new Boton("Creditos",'btn_creditos','btn_creditos','hola');
-        this.#credito1=new Boton("Creditos",'btn_creditos_1','btn_creditos_1','boot');
+        //recuperar datos
+        this.#titulo      =new Titulo("Tres en Raya",'titulo_home',"",'titulo_home',"");
+        this.#juego       =new Boton("Nuevo Juego",'btn_juego','','boot',"");
+        this.#comoJugar   =new Boton("¿Como Jugar?",'btn_cmJugar','','boot',"");
+        this.#panelControl=new Boton("Panel de Control",'btn_pnControl','','boot',"");
+        this.#ranking     =new Boton("Ranking",'btn_ranking','','boot',"");
+        this.#credito     =new Boton("Creditos",'btn_creditos','','boot',"");
     }
 
     view_home(){
         return(
-            `<div class="view_Home">
+            `<div class="view view_Home">
+               ${this.#titulo.crearTitulo()}
+               ${this.#juego.crearBoton()}
+               ${this.#comoJugar.crearBoton()}
+               ${this.#panelControl.crearBoton()}
+               ${this.#ranking.crearBoton()}
                ${this.#credito.crearBoton()}
-               ${this.#credito1.crearBoton()}
             </div>`
         )
     }
@@ -26,12 +40,11 @@ class Home{
         //llamar eventos de otras vista 
         view_home.addEventListener("click",(e)=>{
             //console.log(e);
-            if(e.target.matches(this.#credito.G_Id)){
-                //gurdar Datos localstore o archivo
-                Ruta("Creditos");
+            if(e.target.matches(this.#juego.G_Id)){
+                Rutas.cambioRuta("Registro");
             }
-            if(e.target.matches(this.#credito1.G_Id)){
-                console.log("Hola mundo");
+            if(e.target.matches(this.#credito.G_Id)){
+                Rutas.cambioRuta("Creditos");
             }
         })  
     }

@@ -3,12 +3,14 @@ class Componente{
     #id;
     #name;
     #clase;
+    #otrosAtributos;
 
-    constructor(text_des="",id="",name="",clase=""){
+    constructor(text_des="",id="",name="",clase="",otrosAtributos=""){
        this.#text_des=text_des;
        this.#id=id;
        this.#name=name;
        this.#clase=clase;
+       this.#otrosAtributos=otrosAtributos;
     }
     
     get id_class_name(){
@@ -48,6 +50,14 @@ class Componente{
 
     set Name(name=""){
         this.#name=name;
+    }
+
+    set OtrosAtributos(otrosAtributos=""){
+        this.#otrosAtributos=otrosAtributos;
+    }
+
+    get OtrosAtributos(){
+        return this.#otrosAtributos;
     }
 }
 
