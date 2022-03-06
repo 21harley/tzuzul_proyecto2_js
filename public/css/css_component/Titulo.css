@@ -1,4 +1,6 @@
-.titulo_home{
+.titulo,
+.titulo_home,
+.titulo_ranking{
   color:var(--color-quinto);
   text-decoration: underline;
 }

@@ -14,7 +14,7 @@ class Input extends Componente{
     crearInput(){
         return(
             `
-            <input ${this.id_class_name} type="${this.#type}" ${this.required} ${this.OtrosAtributos}>
+            <input ${this.id_class_name} type="${this.#type}"  ${this.#required} ${this.OtrosAtributos}>
             </input>
             `
         )

@@ -1,6 +1,9 @@
 import Home from "../views/View_menu_home.js";
-import Creditos from "../views/View_menu_creditos.js";
 import Registro from "../views/View_menu_registro.js";
+import Controles from "../views/View_menu_controles.js";
+import Cm_Jugar from "../views/View_menu_cm_jugar.js";
+import Ranking from "../views/view_menu_ranking.js";
+import Creditos from "../views/View_menu_creditos.js";
 
 class Rutas{
 
@@ -8,30 +11,47 @@ class Rutas{
 
         const render=document.querySelector(".root");
 
-        let trasicion=setTimeout(()=>{
-    
+        let transicion=setTimeout(()=>{
             switch(ruta){
                 
                 case "Home":
-                 const home= new Home();
-                 render.innerHTML=home.view_home();
-                 home.event_home();
+                    const home= new Home();
+                    render.innerHTML=home.view_home();
+                    home.event_home();
                 break;
          
                 case "Registro":
                     const registro=new Registro();
                     render.innerHTML=registro.view_registro();
-                    registro.view_registro();
+                    registro.event_registro();
+                break;
+
+                case "Controles":
+                    const controles=new Controles();
+                    render.innerHTML=controles.view_Controles();
+                    controles.event_Controles();
+                break;
+
+                case "Cm_jugar":
+                    const cmJugar=new Cm_Jugar();
+                    render.innerHTML=cmJugar.view_Cm_Jugar();
+                    cmJugar.event_Cm_Jugar();
+                break;
+
+                case "Ranking":
+                    const ranking=new Ranking();
+                    render.innerHTML=ranking.view_Ranking();
+                    ranking.event_Ranking();
                 break;
 
                 case "Creditos":
-                 const creditos= new Creditos();   
-                 render.innerHTML=creditos.view_creditos();
-                 creditos.event_creditos();
+                    const creditos= new Creditos();   
+                    render.innerHTML=creditos.view_creditos();
+                    creditos.event_creditos();
                 break;
             }
 
-            clearTimeout(trasicion);
+            clearTimeout(transicion);
         },700,ruta,render)
         
    }

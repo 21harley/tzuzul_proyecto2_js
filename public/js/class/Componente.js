@@ -18,24 +18,28 @@ class Componente{
     }
 
     get Id(){
-        return this.#id;
+        return `${(this.#id!="")?`${this.#id}`:``}`;
     }
     get G_Id(){
         return "#"+this.#id;
     }
 
     get Clase(){
-        return this.#clase;
+        return `${(this.#clase!="")?`${this.#clase}`:``}`;
     }
 
     get Text_des(){
-        return this.#text_des;
+        return `${(this.#text_des!="")?`${this.#text_des}`:``}`;
     }
 
     get Name(){
-        return this.#name;
+        return `${(this.#name!="")?`${this.#name}`:``}`;
     }
 
+    get OtrosAtributos(){
+        return `${(this.#otrosAtributos!="")?`${this.#otrosAtributos}`:``}`;
+    }
+    
     set Id(id=""){
         this.#id=id;
     }
@@ -56,9 +60,6 @@ class Componente{
         this.#otrosAtributos=otrosAtributos;
     }
 
-    get OtrosAtributos(){
-        return this.#otrosAtributos;
-    }
 }
 
 export default Componente;

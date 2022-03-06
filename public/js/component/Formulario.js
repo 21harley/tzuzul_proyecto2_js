@@ -1,4 +1,4 @@
-import Componente from "../class/Componente";
+import Componente from "../class/Componente.js";
 
 class Formulario extends Componente{
 
@@ -8,8 +8,8 @@ class Formulario extends Componente{
 
     crearFormulario(){
         return `
-        <form ${this.id_class_name} ${this.OtroAtributos}>
-            ${this.text_des}
+        <form ${this.id_class_name} ${this.OtrosAtributos}>
+            ${this.Text_des}
         </form>
         `;
     }
