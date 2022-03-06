@@ -14,7 +14,7 @@ class Componente{
     }
     
     get id_class_name(){
-        return `${(this.#id!="")?`id="${this.#id}"`:``}" ${(this.#clase!="")?`class="${this.#clase}"`:``} ${(this.#name!="")?`name="${this.#name}"`:""}`
+        return `${(this.#id!="")?`id="${this.#id}"`:``} ${(this.#clase!="")?`class="${this.#clase}"`:``} ${(this.#name!="")?`name="${this.#name}"`:""}`
     }
 
     get Id(){
