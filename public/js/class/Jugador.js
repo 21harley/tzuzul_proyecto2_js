@@ -1,22 +1,31 @@
+import Pieza from "./Pieza.js";
+
 class Jugador{
     //atributos
     #nombre;
     #puntos;
     #turno;
     #colorPieza;
+    #ficha;
 
-    constructor(nombre="",puntos=0,turno=0,colorPieza=""){
+    constructor(nombre="",puntos=0,turno=0,colorPieza="",nameFicha=""){
         this.#nombre=nombre;
         this.#puntos=puntos;
         this.#turno=turno;
         this.#colorPieza=colorPieza;
+        this.#ficha=new Pieza(nameFicha,this.ColorPieza,this.Turno);
     }
     
     //metodos
     sumarPuntos(){
         this.Puntos+=1;
     }
-    
+    colocarFicha(){
+        return this.#ficha.crearPieza();
+    }
+    get Ficha(){
+        return this.#ficha;
+    }
     //set y get
     set Nombre(nombre=""){
         this.#nombre=nombre;

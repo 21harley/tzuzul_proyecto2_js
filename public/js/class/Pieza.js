@@ -19,7 +19,9 @@ class Pieza{
         return(
             `
               <div class="container jugador-${this.#turnoJugador}">
-                 <img src="${this.#url}" class="pieza">
+                 <div class="pieza">
+                       <div  class="pieza_${this.#url} jugador${this.#turnoJugador}"></div>
+                 </div>
               </div>
             `
         )

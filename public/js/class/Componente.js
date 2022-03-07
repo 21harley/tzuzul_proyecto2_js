@@ -28,6 +28,10 @@ class Componente{
         return `${(this.#clase!="")?`${this.#clase}`:``}`;
     }
 
+    get P_Clase(){
+        return "."+this.#clase;
+    }
+
     get Text_des(){
         return `${(this.#text_des!="")?`${this.#text_des}`:``}`;
     }

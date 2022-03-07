@@ -1,9 +1,9 @@
 .formulario_registro{
     margin: auto;
-    width: 80%;
+    width: 90%;
     display: grid;
     place-items: center;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 40% 60%;
     gap: 10px;
     color: var(--color-quinto);
     font-size: 18px;
@@ -12,7 +12,7 @@
 .formulario_registro .input,
 .input_select,
 .input_text{
-    height: 40px;
+    height: 35px;
     font-size: 18px;
     width: 60%;
     background:none;
