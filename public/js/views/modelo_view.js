@@ -8,7 +8,7 @@ class modelo{
         //crear componentes 
     }
 
-    view_modelo(){
+    view(){
         return(
             `
             <div class="view view_modelo">           
@@ -17,7 +17,7 @@ class modelo{
         )
     }
 
-    event_modelo(){
+    event(){
         let view_modelo=document.querySelector(".view_modelo");
         
         view_modelo.addEventListener("click",(e)=>{

@@ -1,8 +1,9 @@
 import Rutas from "../class/Rutas.js";
+import View from "../class/View.js";
 import Boton from "../Component/Boton.js";
 import Titulo from "../component/Titulo.js";
 
-class Controles{
+class Controles extends View{
     //declaro atributos
     #titulo;
     #botonHome;
@@ -10,11 +11,12 @@ class Controles{
     constructor(){
         //cargar datos de localStore
         //crear componentes 
+        super();
         this.#titulo= new Titulo("Controles","titulo","","titulo",1,"");
         this.#botonHome=new Boton("volver Home",'home_boton','home_boton',"boot","");
     }
 
-    view_Controles(){
+    view(){
         return(
             `
             <div class="view view_Controles"> 
@@ -25,7 +27,7 @@ class Controles{
         )
     }
 
-    event_Controles(){
+    event(){
         let view_Controles=document.querySelector(".view_Controles");
         
         view_Controles.addEventListener("click",(e)=>{

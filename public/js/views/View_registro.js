@@ -5,9 +5,9 @@ import Input from "../component/Input.js";
 import Select from "../component/Select.js";
 import Rutas from "../class/Rutas.js";
 import Data from "../class/Data.js";
-import Jugador from "../class/Jugador.js";
+import View from "../class/View.js";
 
-class Registro{
+class Registro extends View{
     
     #titulo;
     #formulario;
@@ -16,6 +16,7 @@ class Registro{
     #jugadorT;
 
     constructor(){
+        super();
         let fichas=["","bolt","bomb","circle","heart","hot","invader","meteor","music","nodejs","python","react","star","wordpress","x"].map((el)=>{
             let aux={value:el};
             return el=aux;
@@ -34,7 +35,7 @@ class Registro{
         this.#volverHome=new Boton("Volver Home","volver_home","","boot","");
     }
 
-    view_registro(){
+    view(){
         return(
             `
             <div class="view view_Registro">
@@ -46,7 +47,7 @@ class Registro{
         )
     }
 
-    event_registro(){
+    event(){
         let view_registro=document.querySelector(".view_Registro");
 
         view_registro.addEventListener("click",(e)=>{

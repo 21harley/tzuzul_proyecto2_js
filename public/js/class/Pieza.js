@@ -3,11 +3,12 @@ class Pieza{
     #url;
     #color;
     #turnoJugador;
-
+    
     constructor(url="",color="",turnoJugador=-1){
         this.#url=url;
         this.#color=color;
         this.#turnoJugador=turnoJugador;
+        document.documentElement.style.setProperty(`--color-jugador${this.#turnoJugador}`,this.#color);
     }
 
     //metodos

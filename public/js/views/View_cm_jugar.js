@@ -1,8 +1,9 @@
 import Rutas from "../class/Rutas.js";
+import View from "../class/View.js";
 import Boton from "../Component/Boton.js";
 import Titulo from "../component/Titulo.js";
 
-class Cm_Jugar{
+class Cm_Jugar extends View{
     //declaro atributos
     #titulo;
     #botonHome;
@@ -10,11 +11,12 @@ class Cm_Jugar{
     constructor(){
         //cargar datos de localStore
         //crear componentes 
+        super();
         this.#titulo= new Titulo("¿Como Jugar?","","","titulo",1,"");
         this.#botonHome=new Boton("volver Home","boton_home","","boot","");
     }
 
-    view_Cm_Jugar(){
+    view(){
         return(
             `
             <div class="view view_Cm_Jugar"> 
@@ -25,7 +27,7 @@ class Cm_Jugar{
         )
     }
 
-    event_Cm_Jugar(){
+    event(){
         let view_Cm_Jugar=document.querySelector(".view_Cm_Jugar");
         
         view_Cm_Jugar.addEventListener("click",(e)=>{

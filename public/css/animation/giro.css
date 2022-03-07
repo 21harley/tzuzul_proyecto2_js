@@ -18,12 +18,12 @@
 }
 
 .giro{
-   background-color: red;
+   background-color: var(--color-jugador1);
    z-index: 1;
 }
 
 .giro1{
-    background-color: blue;
+    background-color: var(--color-jugador2);
     z-index: -1;
 }
 /*

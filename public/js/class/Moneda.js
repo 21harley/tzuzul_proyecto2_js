@@ -5,8 +5,10 @@ class Moneda{
     #container;
     #jugador1;
     #jugador2;
-
+    #random;
+    
     constructor(){
+        this.#random=Math.floor(Math.random()*(10-1+1))+1;
         let datos=[Data.loadData("Jugador1"),Data.loadData("Jugador2")];
         this.#jugador1=new Div(`${datos[0][0][1]}`,"giro","giro","giro","");
         this.#jugador2=new Div(`${datos[1][0][1]}`,"giro1","giro1","giro1","");
@@ -29,7 +31,7 @@ class Moneda{
         document.querySelector(this.#jugador2.P_Clase).style.zIndex="-1";
 
         let contador=0;
-        const ganador=4;
+        const ganador=this.#random;
         console.log("Holaaa :v")
         const cambio=setInterval(()=>{
             
@@ -46,6 +48,22 @@ class Moneda{
             }
 
         },1000,contador,ganador)
+    }
+
+    set Random(random=-1){
+       this.#random=random;
+    }
+
+    get Random(){
+        return this.#random;
+    }
+
+    getTurno(valor=0){
+        if(valor==1){
+            return (this.#random%2==0)?2:1;
+        }else{
+            return (this.#random%2==0)?1:2;
+        }
     }
 }
 

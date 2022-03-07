@@ -1,9 +1,10 @@
 import Data from "../class/Data.js";
 import Rutas from "../class/Rutas.js";
+import View from "../class/View.js";
 import Boton from "../Component/Boton.js";
 import Titulo from "../component/Titulo.js";
 
-class Home{
+class Home extends View{
     //atributos
     #titulo;
     #juego;
@@ -14,6 +15,7 @@ class Home{
 
     constructor(){
         //recuperar datos
+        super();
         this.#titulo      =new Titulo("Tres en Raya",'titulo_home',"",'titulo_home',1,"");
         this.#juego       =new Boton("Nuevo Juego",'btn_juego','','boot',"");
         this.#comoJugar   =new Boton("¿Como Jugar?",'btn_cmJugar','','boot',"");
@@ -21,7 +23,7 @@ class Home{
         this.#credito     =new Boton("Creditos",'btn_creditos','','boot',"");
     }
 
-    view_home(){
+    view(){
         return(
             `<div class="view view_Home">
                ${this.#titulo.crearTitulo()}
@@ -33,7 +35,7 @@ class Home{
         )
     }
     
-    event_home(){
+    event(){
         let view_home=document.querySelector(".view_Home");
         //llamar eventos de otras vista 
         view_home.addEventListener("click",(e)=>{

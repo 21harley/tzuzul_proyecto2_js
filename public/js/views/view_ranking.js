@@ -1,8 +1,9 @@
 import Rutas from "../class/Rutas.js";
+import View from "../class/View.js";
 import Boton from "../Component/Boton.js";
 import Titulo from "../component/Titulo.js";
 
-class Ranking{
+class Ranking extends View{
     #titulo;
     #botonHome;
     //declaro atributos
@@ -10,11 +11,12 @@ class Ranking{
     constructor(){
         //cargar datos de localStore
         //crear componentes
+        super();
         this.#titulo= new Titulo("Ranking","","","titulo_ranking",1,""); 
         this.#botonHome= new Boton("volver Home","boton_home","","boot","");
     }
 
-    view_Ranking(){
+    view(){
         return(
             `
             <div class="view view_Ranking">
@@ -25,7 +27,7 @@ class Ranking{
         )
     }
 
-    event_Ranking(){
+    event(){
         let view_Ranking=document.querySelector(".view_Ranking");
         
         view_Ranking.addEventListener("click",(e)=>{

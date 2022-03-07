@@ -1,18 +1,20 @@
 import Rutas from "../class/Rutas.js";
+import View from "../class/View.js";
 import Boton from "../Component/Boton.js";
 import Titulo from "../component/Titulo.js";
 
-class Creditos{
+class Creditos extends View{
     #titulo;
     #botonHome;
     
     constructor(){
         //cargar Datos localStore
+        super();
         this.#titulo= new Titulo("Creditos","","","titulo",1,"");
         this.#botonHome=new Boton("volver Home",'home_boton','home_boton',"boot","");
     }
 
-    view_creditos(){
+    view(){
         return(
             `
             <div class="view view_Creditos">
@@ -23,7 +25,7 @@ class Creditos{
         )
     }
 
-    event_creditos(){
+    event(){
         let view_creditos=document.querySelector(".view_Creditos");
         
         view_creditos.addEventListener("click",(e)=>{
