@@ -56,7 +56,7 @@ class Registro extends View{
                 e.preventDefault();
                 let aux=new FormData(document.getElementById(this.#formulario.Id));
                 let jugadorN=[...aux.entries()];
-                console.log(jugadorN)
+                //console.log(jugadorN)
                 if(jugadorN[0][1]==""||jugadorN[2][1]==""){
                    alert("Por favor ingreso los datos del jugador:"+this.#jugadorT.numeroJ);
                 }else{
@@ -67,7 +67,7 @@ class Registro extends View{
                         Data.saveData(this.#jugadorT,"registroJugador");
                         Rutas.cambioRuta("Registro");
                     }else{
-                        console.log(localStorage);
+                        //console.log(localStorage);
                         Rutas.cambioRuta("Juego");//mandar a vista moneda -> juego
                     }
                 }

@@ -67,7 +67,7 @@ class Tablero extends View{
              let suma=(this.#jugador1.Turno==1?1:0);
              let respuesta=((this.#turnos+suma)%(this.#jugador1.Turno+suma)==0);
              let turnoJ=(respuesta)?1:2; 
-             console.log(suma,respuesta,turnoJ);
+             //console.log(suma,respuesta,turnoJ);
              this.#matriz[e.target.name-1]=turnoJ; 
              //colocar ficha
              e.target.innerHTML=(respuesta)?this.#jugador1.colocarFicha():this.#jugador2.colocarFicha();
