@@ -35,7 +35,7 @@ class Moneda extends View{
 
         let contador=0;
         const ganador=this.#random;
-        console.log("Holaaa :v",this.getTurno(1),this.getTurno(2));
+        //console.log("Holaaa :v",this.getTurno(1),this.getTurno(2));
         const cambio=setInterval(()=>{
             
             let moneda=document.querySelector(this.#jugador1.P_Clase);
