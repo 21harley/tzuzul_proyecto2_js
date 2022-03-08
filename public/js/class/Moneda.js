@@ -1,13 +1,15 @@
 import Div from "../component/Div.js";
 import Data from "./Data.js";
+import View from "./View.js";
 
-class Moneda{
+class Moneda extends View{
     #container;
     #jugador1;
     #jugador2;
     #random;
-    
+    #active;
     constructor(){
+        super();
         this.#random=Math.floor(Math.random()*(10-1+1))+1;
         let datos=[Data.loadData("Jugador1"),Data.loadData("Jugador2")];
         this.#jugador1=new Div(`${datos[0][0][1]}`,"giro","giro","giro","");
@@ -16,9 +18,10 @@ class Moneda{
               ${this.#jugador1.crearDiv()}
               ${this.#jugador2.crearDiv()}
         `,"container_giro","c_giro","container_giro","");
+        this.#active=true;
     }
 
-    view_Moneda(){
+    view(){
        return(
            `
            ${this.#container.crearDiv()}
@@ -26,13 +29,13 @@ class Moneda{
        )
     }
 
-    event_moneda(){
+    event(){
         document.querySelector(this.#jugador1.P_Clase).style.zIndex="1";
         document.querySelector(this.#jugador2.P_Clase).style.zIndex="-1";
 
         let contador=0;
         const ganador=this.#random;
-        console.log("Holaaa :v")
+        console.log("Holaaa :v",this.getTurno(1),this.getTurno(2));
         const cambio=setInterval(()=>{
             
             let moneda=document.querySelector(this.#jugador1.P_Clase);
@@ -43,19 +46,28 @@ class Moneda{
             moneda1.style.zIndex=(moneda1.style.zIndex=="1")?'-1':'1';
             contador++;
             if(contador>ganador){
+                this.#active=false;
                 clearInterval(cambio);
-                //mostrar boton continuar
             }
 
         },1000,contador,ganador)
     }
-
+    get Container(){
+        return this.#container;
+    }
+    get Active(){
+        return this.#active;
+    }
     set Random(random=-1){
        this.#random=random;
     }
 
     get Random(){
         return this.#random;
+    }
+    
+    getTimer(){
+        return this.#random*1000;
     }
 
     getTurno(valor=0){

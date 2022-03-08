@@ -2,7 +2,6 @@
 .container_giro{
   height: 400px;
   width: 400px;
-  background-color: aqua;
   display: grid;
   place-items: center;
 }

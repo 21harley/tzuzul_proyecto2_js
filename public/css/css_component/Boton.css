@@ -10,17 +10,27 @@
 
 */
 
-.boot{
+.boot,
+.activo,
+.cerrado{
     background-color: var(--color-quinto);
     color: var(--color-primero);
     height: 50px;
     width: 80%;
     border: none;
     transition: all 0.5s;
+    display: grid;
+    place-items: center;
 }
 
-.boot:hover{
+.boot:hover,
+.activo:hover{
     background-color: var(--color-primero);
     color: var(--color-quinto);
     cursor: pointer;
+}
+
+.cerrado{
+    background-color: var(--color-primero);
+    color: var(--color-quinto);
 }
