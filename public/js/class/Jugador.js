@@ -23,6 +23,19 @@ class Jugador{
     colocarFicha(){
         return this.#ficha.crearPieza();
     }
+    
+    getData(){
+        return {nombre:this.#nombre,
+                puntos:this.#puntos,
+                turnos:this.#turno,
+                colorPieza:this.#colorPieza,
+                nameFicha:this.#ficha.Url}
+    }
+
+    static cargarJugador(data={}){
+        return new Jugador(data.nombre,data.puntos,data.turnos,data.colorPieza,data.nameFicha);
+    }
+
     get Ficha(){
         return this.#ficha;
     }

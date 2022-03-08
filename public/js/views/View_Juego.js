@@ -17,8 +17,10 @@ class Juego extends View{
         super();
         let jugadors=[Data.loadData("Jugador1"),Data.loadData("Jugador2")];
         this.#moneda=new Moneda();//retorne el turno;
-        this.#jugador1=new Jugador(jugadors[0][0][1],0,this.#moneda.getTurno(1),jugadors[0][1][1],jugadors[0][2][1]);
-        this.#jugador2=new Jugador(jugadors[1][0][1],0,this.#moneda.getTurno(2),jugadors[1][1][1],jugadors[1][2][1]);
+        jugadors[0].turnos=this.#moneda.getTurno(1);
+        this.#jugador1=Jugador.cargarJugador(jugadors[0]);
+        jugadors[1].turnos=this.#moneda.getTurno(2);
+        this.#jugador2=Jugador.cargarJugador(jugadors[1]);
         this.#tablero=new Tablero([this.#jugador1,this.#jugador2]);
     }
 

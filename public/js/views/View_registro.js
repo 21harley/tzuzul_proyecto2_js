@@ -6,6 +6,7 @@ import Select from "../component/Select.js";
 import Rutas from "../class/Rutas.js";
 import Data from "../class/Data.js";
 import View from "../class/View.js";
+import Jugador from "../class/Jugador.js";
 
 class Registro extends View{
     
@@ -60,8 +61,9 @@ class Registro extends View{
                 if(jugadorN[0][1]==""||jugadorN[2][1]==""){
                    alert("Por favor ingreso los datos del jugador:"+this.#jugadorT.numeroJ);
                 }else{
-                    //let j=new Jugador(jugadorN[0][1],0,-1,)
-                    Data.saveData(jugadorN,"Jugador"+this.#jugadorT.numeroJ);
+                    let j=new Jugador(jugadorN[0][1],0,-1,jugadorN[1][1],jugadorN[2][1]);
+                    console.log(j.getData());
+                    Data.saveData(j.getData(),"Jugador"+this.#jugadorT.numeroJ);
                     if(this.#jugadorT.numeroJ<2){
                         this.#jugadorT.numeroJ++;
                         Data.saveData(this.#jugadorT,"registroJugador");

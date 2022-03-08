@@ -3,6 +3,7 @@ import Div from "../component/Div.js";
 import Boton from "./../component/Boton.js";
 import Titulo from "../component/Titulo.js";
 import logicaMatriz from "../function/LogicaMatriz.js";
+import Data from "./Data.js";
 
 class Tablero extends View{
     #jugador1;
@@ -32,7 +33,7 @@ class Tablero extends View{
             this.#matriz[i]=-1;
         }
         this.#botones=[];
-        this.#titulo      =new Titulo(`${this.#jugador1.Nombre}-Vs-${this.#jugador2.Nombre}`,'titulo_tablero',"",'titulo_home',1,"");
+        this.#titulo      =new Titulo(`${this.#jugador1.Nombre+" "+this.#jugador1.Puntos}-Vs-${this.#jugador2.Nombre+" "+this.#jugador2.Puntos}`,'titulo_tablero',"",'titulo_home',1,"");
         for(let i=0;i<9;i++){
             this.#botones.push((new Boton("-",`boton-${(i+1)}`,`${(i+1)}`,"activo","")));
         }
@@ -86,6 +87,12 @@ class Tablero extends View{
                  });
                  mensaje=`Gano ${(respuesta)?this.#jugador1.Nombre:this.#jugador2.Nombre}`;
                  alert(mensaje);
+                 if(respuesta){
+                     this.#jugador1.Puntos++;
+                 }else{
+                     this.#jugador2.Puntos++;
+                 }
+                 Data.saveData((respuesta)?this.#jugador1.getData():this.#jugador2.getData(),"Jugador"+turnoJ);
                  document.querySelector(this.#titulo.G_Id).innerHTML=mensaje;
              }
 

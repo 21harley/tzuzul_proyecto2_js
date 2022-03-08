@@ -1,6 +1,7 @@
 import Div from "../component/Div.js";
 import Data from "./Data.js";
 import View from "./View.js";
+import Jugador from "./../class/Jugador.js";
 
 class Moneda extends View{
     #container;
@@ -9,11 +10,12 @@ class Moneda extends View{
     #random;
     #active;
     constructor(){
+        console.log(localStorage);
         super();
         this.#random=Math.floor(Math.random()*(10-1+1))+1;
         let datos=[Data.loadData("Jugador1"),Data.loadData("Jugador2")];
-        this.#jugador1=new Div(`${datos[0][0][1]}`,"giro","giro","giro","");
-        this.#jugador2=new Div(`${datos[1][0][1]}`,"giro1","giro1","giro1","");
+        this.#jugador1=new Div(`${Jugador.cargarJugador(datos[0]).Nombre}`,"giro","giro","giro","");
+        this.#jugador2=new Div(`${Jugador.cargarJugador(datos[1]).Nombre}`,"giro1","giro1","giro1","");
         this.#container=new Div(`
               ${this.#jugador1.crearDiv()}
               ${this.#jugador2.crearDiv()}
